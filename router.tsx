@@ -1,17 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UploadBox from "./components/UploadBox";
-import Leaderboard from "./components/Leaderboard";
-import AdminToggle from "./components/AdminToggle";
-import Loading from "./components/Loading";
+import Home from "./pages/Home";
+import Upload from "./pages/Upload";
+import Leaderboard from "./pages/Leaderboard";
+import Admin from "./pages/Admin";
+import NotFound from "./pages/NotFound";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<UploadBox />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/upload" element={<Upload />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/admin" element={<AdminToggle />} />
-        <Route path="/loading" element={<Loading />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
